@@ -40,13 +40,12 @@ int main() {
 	Panel *panels = (Panel*)malloc(pCount * sizeof(*panels));
 	
 	// Запишем в память конфигурации досок
+	int length, width;
 	for (int i = 0; i < pCount; i++){
 		cout << "Please input panel parameters:\n";
 		cout << "	length = ";
-		int length;
 		cin >> length;
 		cout << "	width = ";
-		int width;
 		cin >> width;
 		panels[i] = Panel(length, width);
 	}
