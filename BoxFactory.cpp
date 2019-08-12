@@ -67,6 +67,7 @@ int main() {
 	// Проверим возможные комбинации досок и найдём комбинацию с минимальной площадью
 	int minTotArea = INT_MAX;
 	pair<bool, bool> foundPanels;
+	bool foudBoxes = false;
 	Panel **box = (Panel**)malloc(3 * sizeof(box));
 	Panel **goodBox = (Panel**)malloc(3 * sizeof(box));
 	for (Panel *panel : pVect){
@@ -88,6 +89,7 @@ int main() {
 			cout << "totArea = " << totArea << "\n";
 			cout << "MinTotArea = " << minTotArea << "\n";
 			if (totArea < minTotArea){
+				foudBoxes = true;
 				minTotArea = totArea;
 				for (int i = 0; i < 3; i++){
 					goodBox[i] = box[i];
@@ -99,7 +101,7 @@ int main() {
 		}
 	}
 	
-	if (foundPanels.first, foundPanels.second){
+	if (foudBoxes){
 		cout << "Have the solution\n";
 		cout << "area = " << minTotArea << "\n";
 		cout << "	(";
